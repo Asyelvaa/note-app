@@ -2,23 +2,24 @@ import React, { useEffect, useState } from "react";
 
 import NoteContainer from "./components/NoteContainer/NoteContainer";
 import Sidebar from "./components/SideBar/Sidebar";
+import DataNotes from "./components/utils/DataNotes";
 
 import "./App.css";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState();
 
   const addNote = (color) => {
     const tempNotes =
     {
-      id: new Date().getTime() + Math.random,
+      id: new Date(),
       title: "",
       text: "",
       time: Date.now(),
       color,
     };
     
-    setNotes([tempNotes, ...notes]);
+    setNotes([ ...notes, tempNotes]);
   };
 
   const deleteNote = (id) => {
@@ -47,7 +48,7 @@ function App() {
   };
 
   useEffect(() => {
-    setNotes([]);
+    setNotes([...DataNotes]);
   }, []);
 
   return (

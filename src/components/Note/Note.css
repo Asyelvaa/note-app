@@ -28,6 +28,7 @@
     font-weight: bold; 
     text-align: center;
   }
+
   
   .note_footer {
     display: flex;
@@ -39,3 +40,7 @@
     width: 30px;
     height: 30px;
   }
+
+.note_title_hint {
+  color: #808080;
+}
